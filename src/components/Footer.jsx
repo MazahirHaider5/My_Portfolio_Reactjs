@@ -57,13 +57,13 @@ const Footer = () => {
 
           <div className="relative lg:grid lg:grid-cols-2 lg:gap-12">
             <div className="mb-10 lg:mb-0">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-400/80 mb-3 reveal-up">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-sky-400/80 mb-3">
                 Let&apos;s collaborate
               </p>
-              <h2 className="headline-1 mb-4 lg:max-w-[14ch] reveal-up">
+              <h2 className="headline-1 mb-4 lg:max-w-[14ch]">
                 Let&apos;s work together today!
               </h2>
-              <p className="text-sm text-zinc-400 mb-6 max-w-[40ch] reveal-up">
+              <p className="text-sm text-zinc-400 mb-6 max-w-[40ch]">
                 Have an idea in mind or need help with an existing product? Reach out and
                 let&apos;s build something you&apos;re excited to ship.
               </p>
@@ -71,13 +71,12 @@ const Footer = () => {
                 href="mailto:Mazahirhaider98@gmail.com"
                 label="Start Project"
                 icon="chevron_right"
-                classes="reveal-up"
               />
             </div>
 
             <div className="grid grid-cols-2 gap-8 lg:pl-6">
               <div>
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-zinc-400 reveal-up">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-zinc-400">
                   Sitemap
                 </p>
                 <ul>
@@ -85,7 +84,7 @@ const Footer = () => {
                     <li key={key}>
                       <a
                         href={href}
-                        className="block text-sm text-zinc-400 py-1.5 transition-colors hover:text-zinc-100 reveal-up"
+                        className="block text-sm text-zinc-400 py-1.5 transition-colors hover:text-zinc-100"
                       >
                         {label}
                       </a>
@@ -95,7 +94,7 @@ const Footer = () => {
               </div>
 
               <div>
-                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-zinc-400 reveal-up">
+                <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-zinc-400">
                   Socials
                 </p>
                 <ul>
@@ -103,7 +102,7 @@ const Footer = () => {
                     <li key={key}>
                       <a
                         href={href}
-                        className="block text-sm text-zinc-400 py-1.5 transition-colors hover:text-zinc-100 reveal-up"
+                        className="block text-sm text-zinc-400 py-1.5 transition-colors hover:text-zinc-100"
                         target="_blank"
                         rel="noreferrer"
                       >
@@ -117,23 +116,23 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-4 items-center justify-between py-6 mb-2 border-t border-zinc-900/80 text-center md:flex-row md:text-left">
-          <a href="/" className="logo reveal-up flex items-center gap-3">
-            <img
-              src="/images/logo-bg.png"
-              width={56}
-              height={56}
-              alt="Logo"
-              className="rounded-2xl"
-            />
-            <span className="text-sm font-medium text-zinc-200 tracking-wide">
-              Mazahir Haider
-            </span>
-          </a>
-          <p className="text-zinc-500 text-xs md:text-sm reveal-up">
-            &copy; 2024 <span className="text-zinc-200">CodeWithHaiderr</span>. All rights reserved.
-          </p>
-        </div>
+        <div className="mt-6 flex flex-col items-center justify-center gap-3 py-4 text-center md:flex-row md:justify-between">
+  <a href="/" className="logo flex items-center gap-3">
+    <img
+      src="/images/logo-bg.png"
+      width={56}
+      height={56}
+      alt="Logo"
+      className="rounded-2xl"
+    />
+    <span className="text-sm font-medium text-zinc-100 tracking-wide">
+      Mazahir Haider
+    </span>
+  </a>
+  <p className="text-zinc-300 text-xs md:text-sm mt-2 md:mt-0">
+    &copy; 2024 <span className="text-zinc-50">CodeWithHaiderr</span>. All rights reserved.
+  </p>
+</div>
       </div>
     </footer>
   );

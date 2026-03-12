@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  @apply bg-zinc-900 text-zinc-50 h-[200vh];
+  @apply bg-zinc-900 text-zinc-50 min-h-screen;
 }
 
 /* """""""""""""""""""""""""""""""" COMPONENTS """""""""""""""""""""""""""""""" */
