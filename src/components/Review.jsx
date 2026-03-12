@@ -132,30 +132,30 @@ const Review = () => {
                 }`}
               >
                 <div className="h-full w-full">
-                  <img
-                    src={src}
-                    alt={alt}
-                    className="h-full w-full object-cover rounded-[1.3rem] md:rounded-[1.6rem]"
-                    loading={index === 0 ? "eager" : "lazy"}
-                  />
+                    <img
+                      src={src}
+                      alt={alt}
+                      className="h-full w-full object-cover rounded-[1.3rem] md:rounded-[1.6rem]"
+                      loading={index === 0 ? "eager" : "lazy"}
+                    />
                 </div>
               </div>
             ))}
 
-            <button
-              type="button"
-              onClick={goToPrev}
-              aria-label="Previous slide"
-              className="absolute left-4 top-1/2 z-20 -translate-y-1/2 grid h-10 w-10 place-items-center rounded-full border border-sky-500/80 bg-white/95 text-sky-700 shadow-xl transition hover:bg-sky-50 hover:border-sky-400"
-            >
-              <span className="text-xl leading-none">&#10094;</span>
-            </button>
+              <button
+                type="button"
+                onClick={goToPrev}
+                aria-label="Previous slide"
+                className="absolute left-4 top-1/2 z-20 -translate-y-1/2 grid h-10 w-10 place-items-center rounded-full border border-sky-500/80  text-sky-700 shadow-xl transition hover:bg-sky-50 hover:border-sky-400"
+              >
+                <span className="text-xl leading-none">&#10094;</span>
+              </button>
 
             <button
               type="button"
               onClick={goToNext}
               aria-label="Next slide"
-              className="absolute right-4 top-1/2 z-20 -translate-y-1/2 grid h-10 w-10 place-items-center rounded-full border border-sky-500/80 bg-white/95 text-sky-700 shadow-xl transition hover:bg-sky-50 hover:border-sky-400"
+              className="absolute right-4 top-1/2 z-20 -translate-y-1/2 grid h-10 w-10 place-items-center rounded-full border border-sky-500/80 text-sky-700 shadow-xl transition hover:bg-sky-50 hover:border-sky-400"
             >
               <span className="text-xl leading-none">&#10095;</span>
             </button>
