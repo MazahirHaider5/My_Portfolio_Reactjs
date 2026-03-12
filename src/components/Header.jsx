@@ -21,9 +21,9 @@ function Header() {
         <h1>
           <a href="/" className="logo">
             <img
-              src="/images/logo.svg"
-              width={40}
-              height={40}
+              src="/images/logo-bg.png"
+              width={150}
+              height={150}
               alt="Mazahir Haider "
             />
           </a>

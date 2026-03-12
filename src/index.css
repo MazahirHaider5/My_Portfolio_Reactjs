@@ -95,7 +95,7 @@ body {
 }
 
 .reveal-up {
-  @apply translate-y-20 opacity-0
+  @apply will-change-transform;
 }
 
 /* """""""""""""""""""""""""""""""" TYPOGRAPHY """""""""""""""""""""""""""""""" */

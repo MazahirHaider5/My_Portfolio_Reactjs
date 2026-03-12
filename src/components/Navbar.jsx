@@ -11,14 +11,22 @@ const Navbar = ({ navOpen }) => {
   const activeBox = useRef();
 
   const initActiveBox = () => {
-    activeBox.current.style.top = lastActiveLink.current.offsetTop + 'px';
-    activeBox.current.style.left = lastActiveLink.current.offsetLeft + 'px';
-    activeBox.current.style.width = lastActiveLink.current.offsetWidth + 'px';
-    activeBox.current.style.height = lastActiveLink.current.offsetHeight + 'px';
-  }
+    if (!lastActiveLink.current || !activeBox.current) return;
 
-  useEffect(initActiveBox,[]);
-  window.addEventListener('resize', initActiveBox);  
+    activeBox.current.style.top = lastActiveLink.current.offsetTop + "px";
+    activeBox.current.style.left = lastActiveLink.current.offsetLeft + "px";
+    activeBox.current.style.width = lastActiveLink.current.offsetWidth + "px";
+    activeBox.current.style.height = lastActiveLink.current.offsetHeight + "px";
+  };
+
+  useEffect(() => {
+    initActiveBox();
+
+    const handleResize = () => initActiveBox();
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const navItems = [
     {
@@ -33,21 +41,57 @@ const Navbar = ({ navOpen }) => {
       className: "nav-link",
     },
     {
+      label: "Services",
+      link: "#reviews",
+      className: "nav-link",
+    },
+    {
       label: "Work",
       link: "#work",
       className: "nav-link",
     },
-    {
-      label: "Reviews",
-      link: "#reviews",
-      className: "nav-link",
-    },
+    
     {
       label: "Contact",
       link: "#contact",
       className: "nav-link md:hidden",
     },
   ];
+
+  useEffect(() => {
+    const sectionIds = ["home", "about", "reviews", "work", "contact"];
+
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + 120; // account for fixed header height
+      let currentId = sectionIds[0];
+
+      sectionIds.forEach((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+
+        const top = el.offsetTop;
+        const bottom = top + el.offsetHeight;
+
+        if (scrollPos >= top && scrollPos < bottom) {
+          currentId = id;
+        }
+      });
+
+      const currentLink = document.querySelector(
+        `.navbar a[href="#${currentId}"]`
+      );
+
+      if (currentLink && lastActiveLink.current !== currentLink) {
+        lastActiveLink.current?.classList.remove("active");
+        currentLink.classList.add("active");
+        lastActiveLink.current = currentLink;
+        initActiveBox();
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const activeCurrentLink = (event) => {
     lastActiveLink.current?.classList.remove('active');
