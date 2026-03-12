@@ -53,8 +53,8 @@ const Hero = () => {
             />
           </div>
         </div>
-        <div className="hidden lg:block">
-          <figure className="relative w-full max-w-[480px]">
+        <div className="mt-10 lg:mt-0 flex justify-center lg:block">
+          <figure className="relative w-full max-w-[360px] sm:max-w-[420px] lg:max-w-[480px]">
             <div className="absolute -inset-6 rounded-[2.5rem] bg-gradient-to-b from-sky-500/40 via-sky-500/0 to-emerald-500/40 blur-3xl" />
             <div className="relative rounded-[2.25rem] border border-zinc-700/60 bg-zinc-900/60 shadow-[0_0_120px_rgba(37,99,235,0.35)] backdrop-blur-3xl overflow-hidden">
               <img
